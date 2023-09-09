@@ -5,13 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Vote;
+
 use Illuminate\Support\Carbon;
 use Image;
 
 class VoteController extends Controller
 {
     //
+    public function dashboard(){
+        $votes=Vote::all();
+        $users=User::all(); 
+        return view ('backend.dashboard',compact('votes','users'));
+    }
+
+  
+
     public function home(){
+        
         $votes=Vote::all();
         return view ('frontend.home',compact('votes'));
     }

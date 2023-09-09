@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VoteController;
+use App\Http\Controllers\VoterDetailController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -51,9 +52,8 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 // backend route
-Route::get('/backend_dashboard', function () {
-    return view('backend.dashboard');
-});
+
+Route::get('/backend_dashboard',[VoteController::class,'dashboard'])->name('backend_dashboard');
 Route::get('/user_list',[VoteController::class,'userIndex'])->name('user_list');
 Route::get('/vote_list',[VoteController::class,'voteIndex'])->name('vote_list');
 Route::get('/vote_create',[VoteController::class,'voteCreate'])->name('vote_create');
@@ -61,3 +61,5 @@ Route::post('/vote_store',[VoteController::class,'voteStore'])->name('vote_store
 Route::get('/vote_edit/{id}',[VoteController::class,'voteEdit'])->name('vote_edit');
 Route::post('/vote_update/{id}',[VoteController::class,'voteUpdate'])->name('vote_update');
 Route::get('/vote_delete/{id}',[VoteController::class,'voteDelete'])->name('vote_delete');
+Route::post('/store',[VoterDetailController::class,'store'])->name('details_store');
+Route::get('/voter_details',[VoterDetailController::class,'voterDetail'])->name('voter_details');

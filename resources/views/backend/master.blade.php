@@ -49,7 +49,7 @@
       <ul class="sidebar-nav" id="sidebar-nav">
   
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="{{route('backend_dashboard')}}">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
           </a>
@@ -76,6 +76,11 @@
                 <i class="bi bi-circle"></i><span>Vote Create</span>
               </a>
             </li>
+            <li>
+              <a href="{{route('voter_details')}}">
+                <i class="bi bi-circle"></i><span>Vote Detail</span>
+              </a>
+            </li>
        
           </ul>
         </li><!-- End Components Nav -->
@@ -98,14 +103,14 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>Voting</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Designed by <a href="https://bootstrapmade.com/">Khadija</a>
     </div>
   </footer><!-- End Footer -->
 

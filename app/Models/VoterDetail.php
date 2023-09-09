@@ -4,14 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\VoterDetail;
+use App\Models\Vote;
 
-class Vote extends Model
+class VoterDetail extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function voterdetails(){
-        return $this->hasMany(VoterDetail::class);
-    }
 
+
+    public function vote()
+    {
+        return $this->belongsTo(Vote::class);
+    }
 }

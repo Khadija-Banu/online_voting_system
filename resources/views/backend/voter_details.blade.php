@@ -4,39 +4,39 @@
 
         <div class="card">    
             <div class="card-body m-4">
-              <h3 >User List  </h3>
+              <h3 >Voter Details  </h3>
               <table class="table" >
                     <thead >
                       <tr>
                         <th style="color:rgba(70,99,202,255)">Ser No</th>
                         <th style="color:rgba(70,99,202,255)">Name</th>
                         <th style="color:rgba(70,99,202,255)">Email</th>
-                        <th style="color:rgba(70,99,202,255)">Image</th>           
+                        <th style="color:rgba(70,99,202,255)">Phone</th>    
+                        <th style="color:rgba(70,99,202,255)">City</th>
+                        <th style="color:rgba(70,99,202,255)">Gender</th>   
+                        <th style="color:rgba(70,99,202,255)">Status</th>       
                       </tr>
                     </thead>
                     <tbody>
                      @php
                        $i=1  
                      @endphp
-                      @foreach ($users as $user)           
+                      @foreach ($vote_details as $vote_detail)           
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>
-                          @if(file_exists(storage_path().'/app/public/users/'.$user->image) &&(!is_null($user->image)))
-                          <img src="{{asset('storage/users/'. $user->image)}}"height="100px"width="150px">
-                          @else         
-                          {{-- <img src="{{asset('storage/categories/default.jpg')}}"height="100px" width="150px"> --}}
-                          @endif
-                        </td>   
+                        <td>{{$vote_detail->name}}</td>
+                        <td>{{$vote_detail->email}}</td>
+                        <td>{{$vote_detail->phone}}</td>
+                        <td>{{$vote_detail->city}}</td>
+                        <td>{{$vote_detail->gender}}</td>
+                        <td>{{$vote_detail->vote->vote_name?? ''}}</td>
                       </tr>   
                       @endforeach
                     </tbody>
                 </table>
     
                      {{-- pegination link show --}}
-                     {{ $users->links() }} 
+          
             </div>
           </div> 
         
